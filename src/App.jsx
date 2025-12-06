@@ -48,7 +48,7 @@ const DRIVERS = [
   "Maheen", 
   "Anzad", 
   "Sinaj", 
-  "Fareed"
+  "Salaludeen"
 ];
 
 const SERVICE_INTERVAL = 10000;
@@ -311,7 +311,12 @@ export default function CarCareApp() {
         <div className="max-w-lg mx-auto flex justify-between items-center p-5">
           <div>
             <h1 className="text-2xl font-bold flex items-center gap-3 text-yellow-500">
-              <Car size={28} className="text-yellow-500" />
+              {/* This img tag now loads your uploaded file */}
+              <img 
+                src="/logo.png" 
+                alt="Luxe On Wheels" 
+                className="w-10 h-10 object-contain" 
+              />
               Car Care
             </h1>
             <p className="text-sm text-gray-400 mt-1">Fleet Monitor</p>
