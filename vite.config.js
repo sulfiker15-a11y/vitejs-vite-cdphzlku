@@ -2,13 +2,16 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+      // This section forces the icon to work in Dev Mode
+      devOptions: {
+        enabled: true
+      },
       manifest: {
         name: 'Car Care',
         short_name: 'CarCare',
@@ -18,7 +21,7 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: 'icon-512.png', // This points to your new file
+            src: 'icon-512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'
